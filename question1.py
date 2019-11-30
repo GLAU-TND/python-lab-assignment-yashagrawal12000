@@ -5,14 +5,10 @@ class MyException(Exception):
         return str(self.v)
 def xyz(a,b):
     c = a+b
-    if(c>150):
-        raise MyException('Err')
+    if(c<150):
+        raise MyException('Custom Exception Occurred')
+    else:
+        return c
 
-
-a = int(input('enter a number'))
-b = int(input('enter a number'))
-sum = a+b
-if(sum>150):
-    print(sum)
-else:
-    print('Custom Expection Occourd')
+v = xyz(5, 42)
+print(v)
